@@ -1,0 +1,38 @@
+.masonry-wrapper {
+  padding: 1.5em;
+  max-width: 1280px;
+  margin: auto;
+}
+.masonry {
+  margin-top: 30px;
+  columns: 1;
+  column-gap: 20px;
+}
+.masonry-item {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 1284px) and (min-width: 840px) {
+  .masonry {
+    columns: 2;
+  }
+
+  .masonry-wrapper {
+    max-width: 860px;
+  }
+}
+@media only screen and (min-width: 1284px) {
+  .masonry {
+    columns: 3;
+  }
+}
+.masonry-content {
+  border-radius: 2px;
+}
+.image-gallery-link {
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.3));
+}
+.image-gallery-link:hover {
+  filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.7));
+}

@@ -1,13 +1,34 @@
 import "./App.css";
-import LandingPage from '../components/landingpage/LandingPage';
+import { useState } from "react";
+import LandingPage from "../components/landingpage/LandingPage";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ImageGallery from "../components/imagegallery/ImageGallery";
 
-function App() {
+const App: React.FC = () => {
+  const [imageGallery, setImageGallery] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   return (
     <div className="App">
-      <LandingPage />    
+      <Router>
+        <Route exact path="/">
+          <LandingPage
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+            setImageGallery={setImageGallery}
+          />
+        </Route>
+        <Route path="/searchresults">
+          <ImageGallery
+            imageGallery={imageGallery}
+            setImageGallery={setImageGallery}
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
+        </Route>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;

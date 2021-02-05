@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./searchbar.css";
 import axios from "axios";
 import {
@@ -14,15 +15,18 @@ import closeIcon from "../../assets/closeicon.svg";
 type InputEvent = React.ChangeEvent<HTMLInputElement>;
 type SubmitEvent = React.FormEvent<HTMLButtonElement>;
 
-const Searchbar: React.FC = () => {
+const Searchbar: React.FC<any> = ({
+  setImageGallery,
+  setSearchValue,
+  searchValue,
+}) => {
+  const history = useHistory();
 
   const {
     searchbarPlaceholder,
     searchbarInputMaxLenght,
   } = searchbarInputSettings;
 
-  const [searchValue, setSearchValue] = useState("");
-  const [imageGallery, setImageGallery] = useState([]);
   const [dynamicStyleChange, setDynamicStyleChange] = useState(
     emptySearchBarStyle
   );
@@ -42,6 +46,9 @@ const Searchbar: React.FC = () => {
     axios.get(searchImages(searchValue.trim())).then((r) => {
       setImageGallery(r.data.results);
     });
+    if(searchValue.length!==0){
+      history.push("/searchresults");
+    }
   };
 
   return (
@@ -59,6 +66,7 @@ const Searchbar: React.FC = () => {
           />
         </button>
         <input
+          value={searchValue}
           onChange={handleInputChange}
           id="searchbar-input"
           type="text"

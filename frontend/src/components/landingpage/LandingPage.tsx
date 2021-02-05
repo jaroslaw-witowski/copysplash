@@ -1,7 +1,11 @@
 import "./landingPage.css";
-import Searchbar from '../searchbar/Searchbar'
+import Searchbar from "../searchbar/Searchbar";
 
-const LandingPage: React.FC = () => {
+const LandingPage: React.FC<any> = ({
+  setImageGallery,
+  setSearchValue,
+  searchValue,
+}) => {
   return (
     <main id="main-section">
       <div className="main-page">
@@ -22,7 +26,11 @@ const LandingPage: React.FC = () => {
             Powered by creators everywhere
           </p>
         </div>
-        <Searchbar />
+        <Searchbar
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+          setImageGallery={setImageGallery}
+        />
       </div>
     </main>
   );

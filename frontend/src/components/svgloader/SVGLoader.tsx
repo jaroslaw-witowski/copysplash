@@ -8,4 +8,5 @@ const SVGLoader: React.FC <SVGLoaderProps> = ({ imageAdress, alt, className}) =>
     return <img className={className} src={imageAdress} alt={alt}/>
 }
 
+
 export default SVGLoader;

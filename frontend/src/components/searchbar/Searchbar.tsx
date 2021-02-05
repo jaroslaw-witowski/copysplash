@@ -5,6 +5,7 @@ import {
   searchbarInputSettings,
 } from "./searchbarsettings";
 
+
 type InputEvent = React.ChangeEvent<HTMLInputElement>;
 type SubmitEvent = React.FormEvent<HTMLButtonElement>;
 
@@ -17,9 +18,13 @@ const Searchbar: React.FC = () => {
 
   const [searchValue, setSearchValue] = useState("");
   const [imageGallery, setImageGallery] = useState([]);
-
+ 
   const handleInputChange = (event: InputEvent) => {
     setSearchValue(event.target.value);
+  };
+
+  const handleResetInput = () => {
+    setSearchValue("");
   };
 
   const handleSubmit = (event: SubmitEvent) => {
@@ -27,7 +32,6 @@ const Searchbar: React.FC = () => {
     axios.get(searchImages(searchValue.trim())).then((r) => {
       setImageGallery(r.data.results);
     });
-
   };
 
   return (
@@ -46,6 +50,11 @@ const Searchbar: React.FC = () => {
           placeholder={searchbarPlaceholder}
           maxLength={searchbarInputMaxLenght}
         />
+        <button
+          onClick={handleResetInput}
+          className="searchbar-reset-button"
+          type="reset"
+        ></button>
       </form>
     </>
   );

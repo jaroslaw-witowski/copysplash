@@ -1,0 +1,51 @@
+#main-section {
+    margin: 0;
+    padding: 0;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../assets/bophomet-zhang-a87lt91He_M-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-page {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 66.6%;
+    max-width: 850px;
+}
+
+
+.main-page-content {
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.main-page-header {
+    margin: 0;
+    font-weight: 700;
+    font-size: 46px;
+}
+
+
+.main-page-content-text {
+    margin: 0;
+}
+
+.main-page-content-link {
+    color: white;
+}
+

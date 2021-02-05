@@ -1,4 +1,5 @@
 import "./landingPage.css";
+import Searchbar from '../searchbar/Searchbar'
 
 const LandingPage: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const LandingPage: React.FC = () => {
             Powered by creators everywhere
           </p>
         </div>
+        <Searchbar />
       </div>
     </main>
   );

@@ -1,15 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import "./imagegallery.css";
-import VerticalModal from '../modal/VerticalModal';
+import VerticalModal from "../modal/VerticalModal";
 
 const ImageGallery: React.FC<any> = ({ imageGallery }) => {
-
   const [modalShow, setModalShow] = useState(false);
   const [modalInfo, setModalInfo] = useState<any>(null);
 
   useEffect(() => {
     setModalShow(true);
-  }, [modalInfo])
+  }, [modalInfo]);
 
   return (
     <div className="masonry-wrapper">
@@ -21,7 +20,7 @@ const ImageGallery: React.FC<any> = ({ imageGallery }) => {
               onClick={() => {
                 setModalInfo(image);
               }}
-              className="image-gallery-link"
+              className="image-gallery-button-link"
             >
               <div className="masonry-item">
                 <img
@@ -35,11 +34,11 @@ const ImageGallery: React.FC<any> = ({ imageGallery }) => {
         })}
       </div>
       <VerticalModal
-        modalInfo={modalInfo} 
+        modalInfo={modalInfo}
         show={modalShow}
         onHide={() => {
-          setModalShow(false)
-          setModalInfo(null)
+          setModalShow(false);
+          setModalInfo(null);
         }}
       />
     </div>

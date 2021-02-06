@@ -1,6 +1,8 @@
 .modal-dialog {
     max-width: 50vw !important;
+    height: 70vh;
     margin: 0 auto;
+    border: none;
 }
 
 .modal-header {
@@ -9,7 +11,6 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
-    border: none;
 }
 
 .modal-profile-name {

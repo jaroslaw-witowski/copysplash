@@ -20,15 +20,13 @@ const ImageGallery: React.FC<any> = ({ imageGallery }) => {
               onClick={() => {
                 setModalInfo(image);
               }}
-              className="image-gallery-button-link"
+              className="image-gallery-button-link masonry-item"
             >
-              <div className="masonry-item">
                 <img
                   className="masonry-content"
                   alt={image.alt_description}
                   src={image.urls.small}
                 />
-              </div>
             </button>
           );
         })}

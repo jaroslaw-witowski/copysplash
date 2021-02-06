@@ -1,0 +1,22 @@
+.modal-dialog{
+    max-width: 80vh !important;
+    max-height: 80vh !important;
+    /* width: 100% !important;
+    height: 100% !important; */
+}
+
+.modal-profil-picture {
+    border-radius: 50%;
+}
+
+.modal-main-image {
+    display: block;
+    width: 100%;
+}
+/* 
+.modal-header{
+    display: flex;
+}
+
+.modal-body{
+} */

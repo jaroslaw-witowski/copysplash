@@ -1,4 +1,4 @@
-import React, { useState, Dispatch, SetStateAction, CSSProperties } from "react";
+import React, { useState, Dispatch, SetStateAction } from "react";
 import { useHistory } from "react-router-dom";
 import "./searchbar.css";
 import axios from "axios";

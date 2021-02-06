@@ -7,12 +7,9 @@ const ImageGallery: React.FC<any> = ({ imageGallery }) => {
   const [modalShow, setModalShow] = useState(false);
   const [modalInfo, setModalInfo] = useState<any>(null);
 
-
   useEffect(() => {
     setModalShow(true);
   }, [modalInfo])
-
-  console.log(modalShow);
 
   return (
     <div className="masonry-wrapper">

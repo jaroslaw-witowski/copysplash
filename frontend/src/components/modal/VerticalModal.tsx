@@ -1,22 +1,20 @@
+import { Modal, Button } from "react-bootstrap";
 import "./verticalmodal.css";
 
 const VerticalModal: React.FC<any> = (props) => {
   console.log(props.modalInfo);
+  const author = 'Author';
 
   return (
     props.modalInfo && (
-      <div
+      <Modal
         dialogClassName={"primaryModal"}
         {...props}
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-         <img
-            className="modal-main-image"
-            src={props.modalInfo.urls.regular}
-            alt={props.modalInfo.alt_description}
-          />
-        <div id='modal-header'>
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
             <a href={props.modalInfo.user.links.html} target='./'>
               <img
                 className="modal-profil-picture"
@@ -24,16 +22,20 @@ const VerticalModal: React.FC<any> = (props) => {
                 alt="profile"
               />
             </a>
-            <p>{props.modalInfo.user.name}</p>
-            <button onClick={props.onHide} />
-        </div>
-        <div className='modal-body'>
-         
-        </div>
-        {/* <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer> */}
-      </div>
+          </Modal.Title>
+          <div className='modal-author'>
+            <p className='modal-author-name'>{author}</p>
+            <p className='modal-profile-name'>{props.modalInfo.user.name}</p>
+          </div>
+        </Modal.Header>
+        <Modal.Body>
+          <img
+            className="modal-main-image"
+            src={props.modalInfo.urls.regular}
+            alt={props.modalInfo.alt_description}
+          />
+        </Modal.Body>
+      </Modal>
     )
   );
 };

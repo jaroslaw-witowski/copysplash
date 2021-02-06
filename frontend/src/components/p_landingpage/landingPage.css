@@ -1,4 +1,4 @@
-#main-section {
+#landing-page {
     margin: 0;
     padding: 0;
     color: white;
@@ -13,7 +13,7 @@
     background-size: cover;
 }
 
-.main-page {
+.landing-page {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@
 }
 
 
-.main-page-content {
+.landing-page-content {
     margin: 20px 0px;
     display: flex;
     flex-direction: column;
@@ -34,18 +34,18 @@
     font-weight: 400;
 }
 
-.main-page-header {
+.landing-page-header {
     margin: 0;
     font-weight: 700;
     font-size: 46px;
 }
 
 
-.main-page-content-text {
+.landing-page-content-text {
     margin: 0;
 }
 
-.main-page-content-link {
+.landing-page-content-link {
     color: white;
 }
 

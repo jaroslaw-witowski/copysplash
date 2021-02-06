@@ -1,20 +1,8 @@
 import "./imagegallery.css";
-import Searchbar from "../searchbar/Searchbar";
 
-const ImageGallery: React.FC<any> = ({
-  imageGallery,
-  setImageGallery,
-  searchValue,
-  setSearchValue,
-}) => {
+const ImageGallery: React.FC<any> = ({ imageGallery }) => {
   return (
     <div className="masonry-wrapper">
-      <Searchbar
-        imageGallery={imageGallery}
-        setImageGallery={setImageGallery}
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
       <div className="masonry">
         {imageGallery.map((image: any) => {
           return (

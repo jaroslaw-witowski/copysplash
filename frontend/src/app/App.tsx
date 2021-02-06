@@ -1,12 +1,13 @@
 import "./App.css";
 import { useState } from "react";
-import LandingPage from "../components/landingpage/LandingPage";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ImageGallery from "../components/imagegallery/ImageGallery";
+import LandingPage from "../components/p_landingpage/LandingPage";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import MainPage from "../components/p_mainpage/MainPage";
 
 const App: React.FC = () => {
-  const [imageGallery, setImageGallery] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
+  const [imageGallery, setImageGallery] = useState<{}[]>([]);
+  const [searchValue, setSearchValue] = useState<string>("");
+  const [displaySearchedValue, setDisplaySearchedValue] = useState<string>("");
 
   return (
     <div className="App">
@@ -16,14 +17,17 @@ const App: React.FC = () => {
             searchValue={searchValue}
             setSearchValue={setSearchValue}
             setImageGallery={setImageGallery}
+            setDisplaySearchedValue={setDisplaySearchedValue}
           />
         </Route>
         <Route path="/searchresults">
-          <ImageGallery
+          <MainPage
             imageGallery={imageGallery}
             setImageGallery={setImageGallery}
             searchValue={searchValue}
             setSearchValue={setSearchValue}
+            displaySearchedValue={displaySearchedValue}
+            setDisplaySearchedValue={setDisplaySearchedValue}
           />
         </Route>
       </Router>

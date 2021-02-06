@@ -5,16 +5,17 @@ const LandingPage: React.FC<any> = ({
   setImageGallery,
   setSearchValue,
   searchValue,
+  setDisplaySearchedValue
 }) => {
   return (
-    <main id="main-section">
-      <div className="main-page">
-        <h1 className="main-page-header">Copysplash</h1>
-        <div className="main-page-content">
-          <p className="main-page-content-text text-part1">
+    <div id="landing-page">
+      <section className="landing-page">
+        <h1 className="landing-page-header">Copysplash</h1>
+        <main className="landing-page-content">
+          <p className="landing-page-content-text text-part1">
             The internet’s source of{" "}
             <a
-              className="main-page-content-link"
+              className="landing-page-content-link"
               target="/"
               href="https://unsplash.com/"
             >
@@ -22,17 +23,18 @@ const LandingPage: React.FC<any> = ({
             </a>
             .
           </p>
-          <p className="main-page-content-text text-part2">
+          <p className="landing-page-content-text text-part2">
             Powered by creators everywhere
           </p>
-        </div>
+        </main>
         <Searchbar
           searchValue={searchValue}
           setSearchValue={setSearchValue}
           setImageGallery={setImageGallery}
+          setDisplaySearchedValue={setDisplaySearchedValue}
         />
-      </div>
-    </main>
+      </section>
+    </div>
   );
 };
 

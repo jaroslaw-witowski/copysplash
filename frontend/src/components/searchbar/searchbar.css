@@ -3,7 +3,7 @@
     display: flex;
     width: 100%;
   }
-  
+
   #searchbar:focus-within {
     border-radius: 5px;
     box-shadow: 0px 0px 0px 5px rgba(88, 88, 88, 0.5);
@@ -49,4 +49,23 @@
     height: 25%;
     border-left: 1px solid silver;
   }
+
+  .main-page-searchbar {
+    margin-top: 25px;
+  }
   
+  .main-page-searchbar .searchbar-submit-button {
+    background: rgb(238, 238, 238);
+  }
+  
+  .main-page-searchbar #searchbar-input[type='text']{
+  background: rgb(238, 238, 238) !important;
+  }
+
+  .main-page-searchbar .searchbar-reset-button {
+    background: rgb(238, 238, 238)
+  }
+
+  .main-page-searchbar .searchbar-submit-button:focus-within {
+    background: rgb(255, 255, 255)
+  }

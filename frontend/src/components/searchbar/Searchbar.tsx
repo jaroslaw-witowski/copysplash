@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Dispatch, SetStateAction, CSSProperties } from "react";
 import { useHistory } from "react-router-dom";
 import "./searchbar.css";
 import axios from "axios";
@@ -15,10 +15,20 @@ import closeIcon from "../../assets/closeicon.svg";
 type InputEvent = React.ChangeEvent<HTMLInputElement>;
 type SubmitEvent = React.FormEvent<HTMLButtonElement>;
 
-const Searchbar: React.FC<any> = ({
+interface SearchbarProps {
+  setImageGallery: Dispatch<SetStateAction<{}[]>>,
+  setSearchValue: Dispatch<SetStateAction<string>>,
+  searchValue: string,
+  setDisplaySearchedValue?: Dispatch<SetStateAction<string>>,
+  addictionalClassName?: string,
+}
+
+const Searchbar: React.FC <SearchbarProps>= ({
   setImageGallery,
   setSearchValue,
   searchValue,
+  setDisplaySearchedValue,
+  addictionalClassName
 }) => {
   const history = useHistory();
 
@@ -26,6 +36,7 @@ const Searchbar: React.FC<any> = ({
     searchbarPlaceholder,
     searchbarInputMaxLenght,
   } = searchbarInputSettings;
+
 
   const [dynamicStyleChange, setDynamicStyleChange] = useState(
     emptySearchBarStyle
@@ -49,11 +60,15 @@ const Searchbar: React.FC<any> = ({
     if(searchValue.length!==0){
       history.push("/searchresults");
     }
+
+    if(setDisplaySearchedValue) {
+      setDisplaySearchedValue(searchValue);
+    }
   };
 
   return (
     <>
-      <form id="searchbar">
+      <form id="searchbar" className={addictionalClassName}>
         <button
           onClick={handleSubmit}
           className="searchbar-submit-button"

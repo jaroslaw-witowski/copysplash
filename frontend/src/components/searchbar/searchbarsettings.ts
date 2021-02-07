@@ -3,11 +3,13 @@ import { CSSProperties } from "react";
 interface SearchbarInput {
   searchbarPlaceholder: string,
   searchbarInputMaxLenght: number,
+  searchResultListLength: number
 }
 
 export const searchbarInputSettings: SearchbarInput = {
   searchbarPlaceholder: "Search free high-resolution photos",
   searchbarInputMaxLenght: 100,
+  searchResultListLength: 5,
 }
 
 interface SearchingComponentParams {
@@ -45,3 +47,8 @@ export const filledSearchBarStyle: CSSProperties = {
   outline: 'none',
 }
 
+export const dummyData = [
+  'car',
+  'tree',
+  'something',
+];

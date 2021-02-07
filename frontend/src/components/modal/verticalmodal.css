@@ -1,0 +1,71 @@
+.modal-dialog {
+    max-width: 55vw !important;
+    margin: 0 auto !important;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none !important;
+    padding: 10px 10px 0px 10px !important;
+}
+
+.modal-profil-picture {
+    border-radius: 50%;
+}
+
+.modal-location {
+    padding: 10px
+}
+
+.modal-author, .modal-location {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+}
+
+.modal-author-title, .modal-location-title {
+    text-justify: center;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-profile-name, .modal-location-name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.modal-body {
+    width: 100%;
+    border: none;
+}
+
+.modal-main-image {
+    width: 100%;
+}
+
+.close {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+@media (max-width: 768px){
+    .modal-dialog {
+        max-width: 100vw !important;
+        margin: 0 auto !important;
+        border: none;
+        font-size: 15px;
+    }
+
+    .modal-profile-name {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+    }
+}
+
+.modal-location-icon, .modal-author-icon {
+    width: 8%;
+}

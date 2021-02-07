@@ -54,18 +54,13 @@
     margin-top: 25px;
   }
   
-  .main-page-searchbar .searchbar-submit-button {
+  .main-page-searchbar .searchbar-submit-button,
+  .main-page-searchbar .searchbar-reset-button,
+  .main-page-searchbar .searchbar-submit-button:focus-within
+  {
     background: rgb(238, 238, 238);
   }
   
   .main-page-searchbar #searchbar-input[type='text']{
   background: rgb(238, 238, 238) !important;
-  }
-
-  .main-page-searchbar .searchbar-reset-button {
-    background: rgb(238, 238, 238)
-  }
-
-  .main-page-searchbar .searchbar-submit-button:focus-within {
-    background: rgb(255, 255, 255)
   }

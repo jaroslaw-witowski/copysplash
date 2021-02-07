@@ -7,8 +7,8 @@ import {
   searchbarInputSettings,
   emptySearchBarStyle,
   filledSearchBarStyle,
-  dummyData
 } from "./searchbarsettings";
+import { engineSerachData } from './searchbarEngineData';
 import SVGLoader from "../../components/svgloader/SVGLoader";
 import searchIcon from "../../assets/searchicons.svg";
 import closeIcon from "../../assets/closeicon.svg";
@@ -61,7 +61,7 @@ const Searchbar: React.FC<SearchbarProps> = ({
     setDynamicStyleChange(filledSearchBarStyle);
 
     if (value.length >= 3) {
-      suggestions = dummyData.sort().filter((val) => regex.test(val));
+      suggestions = engineSerachData.sort().filter((val) => regex.test(val));
       setSuggestions(suggestions);
     }
     if (value.length < 3) {
@@ -99,7 +99,7 @@ const Searchbar: React.FC<SearchbarProps> = ({
 
   return (
     <>
-      <form id="searchbar">
+      <form id="searchbar" className={addictionalClassName}>
         <button
           onClick={handleSubmitButton}
           className="searchbar-submit-button"
@@ -112,6 +112,7 @@ const Searchbar: React.FC<SearchbarProps> = ({
           />
         </button>
         <input
+          value={searchValue}
           onChange={handleInputChange}
           id="searchbar-input"
           type="text"
@@ -168,3 +169,4 @@ const Searchbar: React.FC<SearchbarProps> = ({
 };
 
 export default Searchbar;
+

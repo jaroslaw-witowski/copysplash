@@ -46,9 +46,3 @@ export const filledSearchBarStyle: CSSProperties = {
   borderRadius: '0px',
   outline: 'none',
 }
-
-export const dummyData = [
-  'car',
-  'tree',
-  'something',
-];

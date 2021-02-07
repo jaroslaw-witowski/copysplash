@@ -90,6 +90,7 @@ const Searchbar: React.FC<SearchbarProps> = ({
       setDisplaySearchedValue(searchValue);
     }
     setNoResults(true);
+    setSuggestions([]);
   }
 
   const handleSubmitButton = (event: SubmitEvent) => {
